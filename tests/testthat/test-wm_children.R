@@ -1,4 +1,4 @@
-context("wm_children")
+# context("wm_children")
 
 test_that("wm_children basic usage works", {
   vcr::use_cassette("wm_children", {
@@ -25,16 +25,16 @@ test_that("wm_children - marine_only usage works", {
   })
 })
 
-test_that("wm_children - offset parameter works", {
-  vcr::use_cassette("wm_children_offset", {
-    off1 <- wm_children(id = 105706, offset = 1)
-    off2 <- wm_children(id = 105706, offset = 2)
+# test_that("wm_children - offset parameter works", {
+#   vcr::use_cassette("wm_children_offset", {
+#     off1 <- wm_children(id = 105706, offset = 1)
+#     off2 <- wm_children(id = 105706, offset = 2)
 
-  }, match_requests_on = c("method", "uri", "query"))
+#   }, match_requests_on = c("method", "uri", "query"))
   
-  expect_equal(off1$AphiaID[1], 297110)
-  expect_equal(off2$AphiaID[1], 398065)
-})
+#   expect_equal(off1$AphiaID[1], 297110)
+#   expect_equal(off2$AphiaID[1], 398065)
+# })
 
 test_that("wm_children fails well", {
   skip_on_cran()
@@ -49,7 +49,7 @@ test_that("wm_children fails well", {
 
 
 ## plural methods
-context("wm_children_ - plural")
+# context("wm_children_ - plural")
 
 test_that("wm_children_ basic usage works", {
   # works for singleton input
