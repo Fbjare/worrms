@@ -6,6 +6,15 @@ dist: trusty
 r_github_packages:
   - jimhester/covr
 
+matrix:
+  include:
+  - os: linux
+    r: release
+    env: VCR_TURN_OFF=true
+  - os: linux
+    r: release
+    env: VCR_TURN_OFF=false
+
 r_check_args: "--as-cran --run-dontrun"
 
 after_success:
